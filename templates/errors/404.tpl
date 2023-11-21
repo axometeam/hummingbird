@@ -28,6 +28,7 @@
       ]
     }
   </p>
+  <a href="{url entity='index'}" class="btn btn-primary" title="{l s="Back to homepage" d="Shop.Theme.Catalog"}">{l s="Back to homepage" d="Shop.Theme.Catalog"}</a>
 {/capture}
 
 {block name='page_content_container'}

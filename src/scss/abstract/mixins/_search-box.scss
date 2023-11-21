@@ -1,21 +1,20 @@
-@mixin search-box {
+@mixin search-box($input-min-width: 255px, $input-padding: 10px, $input-text-color: var(--bs-gray-600), $input-border-width: $input-btn-border-width, $input-border-color: $input-border-color, $focus-color: var(--bs-primary), $focus-bg: var(--bs-white), $focus-outline-width: 3px, $submit-btn-color: var(--bs-gray-600), $submit-btn-hover-color: var(--bs-primary)) {
   form {
     position: relative;
 
     input[type="text"] {
-      min-width: 255px;
-      padding: 10px;
-      color: var(--bs-gray-600);
-      border: none;
-      border: $input-btn-border-width solid $input-border-color;
+      min-width: $input-min-width;
+      padding: $input-padding;
+      color: $input-text-color;
+      border: $input-border-width solid $input-border-color;
 
       &:focus {
-        color: var(--bs-gray-900);
-        background: var(--bs-white);
-        outline: 3px var(--bs-primary) solid;
+        color: darken($input-text-color, 20%); // Exemple : Assombrir la couleur au focus
+        background: $focus-bg;
+        outline: $focus-outline-width $focus-color solid;
 
         + button .search {
-          color: var(--bs-primary);
+          color: $focus-color;
         }
       }
     }
@@ -24,12 +23,12 @@
       position: absolute;
       right: 0.125rem;
       bottom: 0.3125rem;
-      color: var(--bs-gray-600);
+      color: $submit-btn-color;
       background: none;
       border: none;
 
       .search:hover {
-        color: var(--bs-primary);
+        color: $submit-btn-hover-color;
       }
     }
   }
